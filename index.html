@@ -8,6 +8,12 @@
     <title>Guess My Number!</title>
   </head>
   <body>
+    <audio src="warp.mp3" id="mario"></audio>
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById('mario').play();
+      };
+    </script>
     <header>
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 20)</p>
@@ -27,7 +33,7 @@
         </p>
       </section>
     </main>
-    <audio id="mario" src="./warp.mp3"></audio>
+
     <script src="script.js"></script>
     <audio id="my-audio" src="win.mp3"></audio>
   </body>
