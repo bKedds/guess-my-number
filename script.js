@@ -3,8 +3,8 @@
 let magicNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highscore = 0;
-const playSong = function () {
-  document.getElementById('my-audio').play();
+const playSong = function (id) {
+  document.getElementById(id).play();
 };
 
 const displayMessage = message =>
@@ -19,7 +19,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
     //When player wins
   } else if (guess === magicNumber) {
-    playSong();
+    playSong('win');
     displayMessage('🎉 Correct Number!');
     document.querySelector('.number').textContent = magicNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -43,6 +43,7 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
+  playSong('mario');
   magicNumber = Math.trunc(Math.random() * 20 + 1);
   score = 20;
   document.querySelector('.number').textContent = '?';
@@ -50,5 +51,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.score').textContent = score;
   displayMessage('Start guessing...');
   document.querySelector('.number').style.width = '15rem';
-  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('body').style.backgroundColor = 'rgb(255, 0, 0)';
 });
