@@ -3,6 +3,9 @@
 let magicNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highscore = 0;
+const playSong = function () {
+	document.getElementById("my-audio").play();
+};
 
 const displayMessage = (message) =>
 	(document.querySelector(".message").textContent = message);
@@ -16,6 +19,7 @@ document.querySelector(".check").addEventListener("click", function () {
 
 		//When player wins
 	} else if (guess === magicNumber) {
+		playSong();
 		displayMessage("🎉 Correct Number!");
 		document.querySelector(".number").textContent = magicNumber;
 		document.querySelector("body").style.backgroundColor = "#60b347";
